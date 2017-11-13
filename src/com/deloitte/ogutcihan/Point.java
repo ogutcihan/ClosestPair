@@ -5,7 +5,6 @@ package com.deloitte.ogutcihan;
  */
 public class Point {
 
-    int number;
     ArrayList<Double> coordinates;
 
     public Point() {
@@ -14,14 +13,6 @@ public class Point {
     public Point(int number, ArrayList<Double> coordinates) {
         this.number = number;
         this.coordinates = coordinates;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
     }
 
     public ArrayList<Double> getCoordinates() {
