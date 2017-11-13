@@ -1,14 +1,22 @@
 package com.deloitte.ogutcihan;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         String filePath = "";
+        ArrayList<Point> points;
+        Scanner scanner;
+        scanner = new Scanner(System.in);
         System.out.println("Enter File Path to Calculate:");
         filePath = scanner.nextLine();
-        selectedInputFile = testFiles[i].getPath();
-        pointList = readInputFile(filePath);
-        result = cpc.findClosest(pointList);
+        points = readInputFile(filePath);
+        findClosest(points);
     }
 
     public static void findClosest(ArrayList<Point> points) {
@@ -54,36 +62,42 @@ public class Main {
         return Math.sqrt(distance);
     }
 
-    public static ArrayList<Point> readInputFile(String path) {
+    public static ArrayList<Point> readInputFile(String path) throws Exception{
         FileReader fileReader;
         BufferedReader buff;
+        try{
+            String textFromFile;
+            String line;
+            int index = 0;
 
-        String textFromFile;
-        String line;
-        int index = 0;
+            ArrayList<Double> coordinates;
+            ArrayList<Point> points;
+            Point p;
+            points = new ArrayList<Point>();
 
-        ArrayList<Double> coordinates;
-        ArrayList<Point> points;
-        Point p;
-        points = new ArrayList<Point>();
+            fileReader = new FileReader(path);
+            buff = new BufferedReader(fileReader);
 
-        fileReader = new FileReader(path);
-        buff = new BufferedReader(fileReader);
+            while ((line = buff.readLine()) != null) {
+                coordinates = new ArrayList<>();
+                p = new Point();
+                String[] lines = line.split("\t");
 
-        while ((line = buff.readLine()) != null) {
-            coordinates = new ArrayList<>();
-            p = new Point();
-            String[] lines = line.split("\t");
+                for (int i = 0; i < lines.length; i++) {
+                    coordinates.add(Double.parseDouble(lines[i]));
+                }
 
-            for (int i = 0; i < lines.length; i++) {
-                coordinates.add(Double.parseDouble(lines[i]));
+                p.setCoordinates(coordinates);
+                points.add(p);
             }
-
-            p.setCoordinates(coordinates);
-            points.add(p);
+            buff.close();
+            return points;
         }
-        buff.close();
-        return points;
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+
     }
 
 

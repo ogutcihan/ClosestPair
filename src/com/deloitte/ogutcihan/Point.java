@@ -1,5 +1,8 @@
 package com.deloitte.ogutcihan;
 
+
+import java.util.ArrayList;
+
 /**
  * Created by cihanogut on 13.11.2017.
  */
@@ -11,7 +14,6 @@ public class Point {
     }
 
     public Point(int number, ArrayList<Double> coordinates) {
-        this.number = number;
         this.coordinates = coordinates;
     }
 
