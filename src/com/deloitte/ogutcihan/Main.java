@@ -79,16 +79,18 @@ public class Main {
             buff = new BufferedReader(fileReader);
 
             while ((line = buff.readLine()) != null) {
-                coordinates = new ArrayList<>();
-                p = new Point();
-                String[] lines = line.split("\t");
+                if(! "".equals(line)){
+                    coordinates = new ArrayList<>();
+                    p = new Point();
+                    String[] lines = line.split("\t");
 
-                for (int i = 0; i < lines.length; i++) {
-                    coordinates.add(Double.parseDouble(lines[i]));
+                    for (int i = 0; i < lines.length; i++) {
+                        coordinates.add(Double.parseDouble(lines[i]));
+                    }
+
+                    p.setCoordinates(coordinates);
+                    points.add(p);
                 }
-
-                p.setCoordinates(coordinates);
-                points.add(p);
             }
             buff.close();
             return points;
