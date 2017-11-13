@@ -1,7 +1,9 @@
 # ClosestPair
 Algorithm Approach
 
-The aim of this approach is to calculate the distance between each point to find minimum distance and the closest pair among the given set of points. In order to achieve this for “n” points, this needs "n2-n" calculations for one dimensions. In our case this take "d*(n2-n)" for “d” dimensions. By using brute-force algorithm this can be solved O(n2) time
+The aim is to calculate the distance between each point to find minimum distance and the closest pair among the given set of points.
+In order to achieve this for “n” points, this needs "n2-n" calculations for one dimensions.
+In our case this take "d*(n2-n)" for “d” dimensions. By using brute-force algorithm this can be solved O(n2) time
 
 Instructions
 
