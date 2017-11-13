@@ -5,20 +5,12 @@ The aim is to calculate the distance between each point to find minimum distance
 In order to achieve this for “n” points, this needs "n2-n" calculations for one dimensions.
 In our case this take "d*(n2-n)" for “d” dimensions. By using brute-force algorithm this can be solved O(n2) time
 
-Instructions
 
-
-Run
+-Run
 
 Enter Path for input file.
 
-Error Message
-
-Could not find any point for the calculation: Application gives this error when there are no point in input file.
-
-At least 2 points needed for calculation: Application gives this error when there are only one point in input file.
-
-Limitations
+-Limitations
 
 Input text file should contain one point per line. For each line, coordinate values should be separated by "\t".
 
@@ -30,6 +22,7 @@ No restriction for dimension.
 
 No maximum limit for points.
 
-Predefined test scenarios:
+
+test scenarios:
 
 Blank file, One point: If there is only one point in the input file, the application gives "At least 2 points needed."
